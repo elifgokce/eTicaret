@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Kinect Paket Satış</title>
+<ui:insert name="head" />
+</head>
+
+<body>
+
+<ui:include src="./data.xhtml" />
+<ui:insert name="body" />
+
+<ui:include src="./anaSayfa.xhtml" />
+<input type="hidden" id="disableButtonId" name="disableButtonId" />
+<input type="hidden" id="disabledAfterOnclick" name="disabledAfterOnclick" value="#{SBRequestParamBean.disabledAfterOnclick}" />
+<input type="hidden" id="surecBasladiId" name="surecBasladiId" />
+<input type="hidden" id="surecIptalId" name="surecIptalId" value="0"/>
+<input type="hidden" id="iframeUrlId" name="iframeUrlId" value="#{ConstManagementBean.IFRAME_URL_ID}"/>
+<input type="hidden" id="sbIceViewId" name="sbIceViewId" value="#{SBRequestParamBean.sbIceViewId}"/>
+<input type="hidden" id="childPageNumForPopupId" name="childPageNumForPopupId" value="#{SBRequestParamBean.childPageNumForPopupId}"/>
+
+
+<div id="connectActiveDivId" style="height: 30px; width: 30px;position: absolute; top: 0pt; left: 0pt;display: none ;">
+
+</div>
+
+
+</body>
+</html>

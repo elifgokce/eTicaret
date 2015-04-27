@@ -1,0 +1,46 @@
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+    xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- /*
+ * Fizik Tedavi ve Spor Hareketleri Satışı
+ * E Ticaret Dersi Projesi
+ * Proje Grubu : Eramy - (Ahmet Murat YAŞAR - Eren ÇOLAK)
+ * Sayfa İşlevi : Anaysayfa, Sol menü sayfası buradan düzenlenmektedir.
+ * Bağlantılı Olduğu Class'lar : 
+ * Kodlayan:Ahmet Murat YAŞAR
+ * Revizyon Nedeni : Oluşturuldu.
+ * Oluşturulma Tarihi:09.04.2015
+ * Revizyon Tarihi:14.04.2015
+ * */ -->
+<h:outputStylesheet name="style.css" library="css" />
+	<h:form>
+ <p:outputPanel id="menuPanel" layout="block">
+    <p:panelMenu style="width:300px">
+        <p:submenu label="Ürün">
+            <p:menuitem value="Ürün İşlemleri" url="/pages/urun.xhtml" icon="ui-icon-tag" />
+        </p:submenu>
+        <p:separator />
+        <p:submenu label="Kullanıcı" >
+            <p:menuitem value="Kullanıcı İşlemleri" url="/pages/kullanici.xhtml" icon="ui-icon-contact" />
+        </p:submenu>
+        <p:submenu label="Satış" >
+            <p:menuitem value="Satış İşlemleri" url="/pages/satis.xhtml" icon="ui-icon-cart" />
+        </p:submenu>
+          <p:submenu label="Kargo" >
+            <p:menuitem value="Kargo Firmaları" url="/pages/kargofirma.xhtml" icon="ui-icon-transferthick-e-w"/>
+            <p:menuitem value="Kargolar" url="/pages/kargo.xhtml"  icon="ui-icon-clipboard"/>
+        </p:submenu>
+            <p:submenu label="Bilgilerimi Güncelle">
+            <p:menuitem value="Güncelle" url="/pages/profil.xhtml"  ajax="false" icon="ui-icon-pencil"/>
+        </p:submenu>
+    </p:panelMenu>
+    </p:outputPanel>
+</h:form>
+</ui:composition>

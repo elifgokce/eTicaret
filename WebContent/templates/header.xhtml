@@ -1,0 +1,42 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet name="style.css" library="css" />
+	<!-- /*
+ * Fizik Tedavi ve Spor Hareketleri Satışı
+ * E Ticaret Dersi Projesi
+ * Proje Grubu : Eramy - (Ahmet Murat YAŞAR - Eren ÇOLAK)
+ * Sayfa İşlevi : Anaysayfa, Üst bölge, banner, kullanıcı giriş kısımları burada yer alacaktır.
+ * Bağlantılı Olduğu Class'lar : UserView,SelectBooleanView
+ * Kodlayan:Ahmet Murat YAŞAR
+ * Revizyon Nedeni : Oluşturuldu.
+ * Oluşturulma Tarihi:07.04.2015
+ * Revizyon Tarihi:14.04.2015
+ * */ -->
+	<h:form>
+    <div id="login">
+    <h:panelGrid cellpadding="3" columns="2" style="margin-bottom:10px" >
+        <f:facet name="header">
+            <p:messages id="msgs" />
+        </f:facet>
+        <p:outputLabel for="firstname" value="Kullanıcı Adı : " />
+        <p:inputText id="firstname" value="#{customer.kad}" />
+        
+        <h:outputText value="Şifre :  " />
+        <p:password id="nonFeedback" value="#{passwordView.password1}" />
+         <h:outputText value="Beni Hatırla : " />
+        <p:selectBooleanCheckbox value="#{selectBooleanView.value1}" />
+        
+        <p:button value="Yeni Üye" href="/pages/uyeKayit.xhtml"/>
+        <p:commandButton value="Giriş" action="#{customer.GirisKontrol}" icon="ui-icon-check" style="float:right;" />
+  
+    </h:panelGrid>
+    </div>
+    </h:form>
+
+</ui:composition>

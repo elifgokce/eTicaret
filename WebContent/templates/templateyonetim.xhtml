@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html   xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:p="http://primefaces.org/ui"
+		xmlns:f="http://java.sun.com/jsf/core">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- /*
+ * Fizik Tedavi ve Spor Hareketleri Satışı
+ * E Ticaret Dersi Projesi
+ * Proje Grubu : Eramy - (Ahmet Murat YAŞAR - Eren ÇOLAK)
+ * Sayfa İşlevi : Anaysayfa, Sayfanın tamamı buradan kontrol edilmektedir.
+ * Bağlantılı Olduğu Class'lar : Primefaces Ajax işlemleri,
+ * Kodlayan:Ahmet Murat YAŞAR
+ * Revizyon Nedeni : Oluşturuldu.
+ * Oluşturulma Tarihi:05.04.2015
+ * Revizyon Tarihi:14.04.2015
+ * */ -->
+<f:view contentType="text/html" id="fview">
+<h:outputStylesheet name="style.css" library="css" />
+		<title>Fizik Tedavi ve Spor Paket Satışı</title>
+		<ui:debug />
+		<f:metadata>
+			<ui:insert name="metadata" />
+		</f:metadata>
+		
+		<h:head>
+			<p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();"  />
+			<p:layout fullPage="false" resizeTitle="resize" style="background-color:#FFFFFF; margin: auto; width:1100px">
+
+			
+				<p:layoutUnit position="west" id="west" resizable="false" header="Menü" style="height:600px;overflow:hidden;" size="310">
+					<ui:include src="index2.xhtml" />
+				</p:layoutUnit>
+				
+			<p:layoutUnit	styleClass="layoutUnitCenter" 	position="center">
+				<h:form id="mainForm">
+				<div>
+					<ui:insert name="content" />
+				</div>
+				</h:form>
+		    </p:layoutUnit>
+
+			</p:layout>
+			
+			<p:dialog modal="true" widgetVar="statusDialog" showHeader="false" 
+				draggable="false" closable="false" resizable="false" 
+				visible="false" position="center" maximizable="false" minimizable="false" >
+				<p:graphicImage value="#{resource['images/ajax-loader.gif']}" />
+			</p:dialog>
+			
+		
+		</h:head>
+
+	<h:body onload="statusDialog.hide();" >
+	</h:body>
+
+</f:view>
+</html>

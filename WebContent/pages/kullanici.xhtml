@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/templates/templateyonetim.xhtml">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- /*
+ * Fizik Tedavi ve Spor Hareketleri Satışı
+ * E Ticaret Dersi Projesi
+ * Proje Grubu : Eramy - (Ahmet Murat YAŞAR - Eren ÇOLAK)
+ * Sayfa İşlevi : Spor kategorisindeki ürünler bu sayfada gösterilecektir.
+ * Bağlantılı Olduğu Class'lar : 
+ * Kodlayan:Ahmet Murat YAŞAR
+ * Revizyon Nedeni : Oluşturuldu.
+ * Oluşturulma Tarihi:10.04.2015
+ * Revizyon Tarihi:14.04.2015
+ * */ -->
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+		<h1>Kullanıcı Sayfası</h1>
+		<p:dataTable var="urun" value="#{dtBasicView.cars}">
+   		 <p:column headerText="Kullanıcı Kodu">
+      	  <h:outputText value="#{urun.id}" />
+  		  </p:column>
+ 
+   		
+    	 <p:column headerText="Satın Aldıkları">
+       		 <h:outputText value="#{urun.brand}" />
+   		 </p:column>
+ 
+    	
+    	  <p:column headerText="Seçenek">
+        	<p:button icon="ui-icon-pencil" title="Düzelt">
+   		      <f:param name="productId" value="30" />
+			</p:button>
+			<p:commandButton icon="ui-icon-close" title="Sil" actionListener="#{dialogView.destroyWorld}">
+			 <p:confirm header="Silme İşlemi" message="Emin misiniz?" icon="ui-icon-alert" />
+   		      <f:param name="productId" value="30" />
+			</p:commandButton>
+			<p:commandButton icon="ui-icon-zoomin" title="Bilgileri Gör" type="button" onclick="PF('dlg3').show();">
+   		      <f:param name="productId" value="30" />
+			</p:commandButton>
+			 <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+       			 <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+      		     <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+  			 </p:confirmDialog>
+  			 <p:dialog header="Detaylı Bilgi." widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+  			 <h3>Kullanıcı Adı : </h3>
+			 <h3>Son Giriş Tarihi : </h3>
+			 <h3>Açıklama : </h3>
+			 <h3>... : </h3>
+			 </p:dialog>
+    	 </p:column>
+	</p:dataTable>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,19 @@
+#page{
+	width: 800px;
+	margin: 0 auto;
+}
+#login{
+	margin: 0 auto;
+	float:right;
+    height:150px;
+	border: 1px solid #DDD;
+	margin-right:15px;
+}
+#header{
+	width: 20%;
+	height:200px;
+	float:right;
+	border: 1px solid #DDD;
+	margin-bottom:16px;
+	background-color:#FFFFFF;
+}
